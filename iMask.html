@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="jquery-1.10.2.min.js"></script>
+	<script src="jquery.imask.min.js"></script>
+</head>
+<body>
+	<input type="text" id="imask" value="2">
+	<h2></h2>
+</body>
+<script>
+	
+	$('#imask').iMask({
+		type : 'number',
+		decDigits : 3 
+		,    sanity : function( val ){
+			return Math.min( 100000, Math.max( 0, parseFloat( 1000*val.replace( /\D/g, '' ) ) ) )
+		}
+	});
+	
+	
+
+	
+</script>
+</html>
